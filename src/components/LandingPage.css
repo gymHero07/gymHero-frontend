@@ -1,0 +1,74 @@
+.landing {
+  text-align: center;
+}
+
+.landing-header {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  color: #facc15; /* yellow */
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.landing-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 4px #fbbf24, 0 0 8px #facc15;
+}
+
+.landing-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 2.5rem;
+  color: #fde68a;
+}
+
+.landing-actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.landing-button {
+  border: 3px solid #facc15;
+  background-color: #000000;
+  color: #facc15;
+  padding: 0.9rem 1.8rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px #000000, 0 0 0 4px #facc15;
+  transition: transform 120ms ease-out, box-shadow 120ms ease-out,
+    background-color 120ms ease-out, color 120ms ease-out;
+}
+
+.landing-button-primary {
+  background-color: #facc15;
+  color: #000000;
+}
+
+.landing-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 3px #000000, 0 0 0 4px #facc15, 0 10px 0 4px #854d0e;
+}
+
+.landing-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 3px #000000, 0 0 0 4px #facc15, 0 4px 0 4px #854d0e;
+}
+
+.landing-button-secondary {
+  opacity: 0.9;
+}
+
