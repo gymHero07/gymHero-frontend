@@ -6,7 +6,6 @@ function LandingPage() {
     <div className="landing">
       <header className="landing-header">
         <h1 className="landing-title">GymHero</h1>
-        <p className="landing-subtitle">Press start to begin your training</p>
         <div className="landing-actions">
           <button className="landing-button landing-button-primary">
             Start Training

@@ -13,7 +13,6 @@
   justify-content: center;
   font-family: 'Press Start 2P', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', sans-serif;
-  text-transform: uppercase;
   color: #facc15; /* yellow */
   padding: 0 1.5rem;
   box-sizing: border-box;
@@ -23,7 +22,6 @@
   font-size: clamp(2rem, 5vw, 3rem);
   letter-spacing: 0.2em;
   margin-bottom: 1rem;
-  text-shadow: 0 0 4px #fbbf24, 0 0 8px #facc15;
 }
 
 .landing-subtitle {
