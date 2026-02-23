@@ -27,6 +27,7 @@ function MainPage({ userId }) {
         <div className="main-page-card">
           <div className="main-page-label">Your Level</div>
           <div className="main-page-stat">{lvl !== null ? lvl : 'Loading...'}</div>
+          <div className="main-page-stat">{`YOUR USERID: ${userId}`}</div>
         </div>
       </div>
     </div>
