@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './MainPage.css';
 import { getUserLvl } from './userService';
 
-function MainPage() {
+function MainPage({ telegramUser }) {
   const [lvl, setLvl] = useState(null);
-  const telegramId = '7068358534'; // здесь подставь нужный telegram_id
+  const telegramId = String(telegramUser.id); // здесь подставь нужный telegram_id
 
   useEffect(() => {
     async function fetchLvl() {
