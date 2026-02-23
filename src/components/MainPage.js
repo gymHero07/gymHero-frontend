@@ -4,16 +4,16 @@ import { getUserLvl } from './userService';
 
 function MainPage({ telegramUser }) {
   const [lvl, setLvl] = useState(null);
-  const telegramId = String(telegramUser.id); // здесь подставь нужный telegram_id
+  // const telegramId = String(telegramUser.id); // здесь подставь нужный telegram_id
 
   useEffect(() => {
     async function fetchLvl() {
-      const userLvl = await getUserLvl(telegramId);
+      const userLvl = await getUserLvl(telegramUser.id);
       setLvl(userLvl);
     }
 
     fetchLvl();
-  }, [telegramId]);
+  }, [telegramUser]);
 
   return (
     <div className="main-page">
