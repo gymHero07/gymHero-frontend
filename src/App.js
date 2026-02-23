@@ -1,39 +1,34 @@
-// App.js
-import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import LandingPage from './components/LandingPage';
 import MainPage from './components/MainPage';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('landing');
-  const [telegramUser, setTelegramUser] = useState(null);
+  const [started, setStarted] = useState(false);
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
-    if (tg) tg.ready();
 
-    const user = tg?.initDataUnsafe?.user;
-    if (user) {
-      console.log("Telegram ID:", user.id);
-      console.log("Username:", user.username);
-      console.log("First name:", user.first_name);
-      setTelegramUser(user); // сохраняем пользователя
+    if (!tg) {
+      console.warn('Telegram WebApp API is unavailable in this environment');
+      return;
+    }
+
+    tg.ready();
+
+    const telegramUserId = tg.initDataUnsafe?.user?.id;
+    if (telegramUserId) {
+      setUserId(String(telegramUserId));
+    } else {
+      console.warn('User ID not found in Telegram WebApp data');
     }
   }, []);
 
-  const handleStartTraining = () => {
-    setCurrentPage('main');
-  };
+  if (!started) {
+    return <LandingPage onStartTraining={() => setStarted(true)} />;
+  }
 
-  return (
-    <div className="App">
-      {currentPage === 'landing' ? (
-        <LandingPage onStartTraining={handleStartTraining} />
-      ) : (
-        <MainPage telegramUser={telegramUser} />
-      )}
-    </div>
-  );
+  return <MainPage userId={userId} />;
 }
 
 export default App;

@@ -2,22 +2,22 @@ import React, { useEffect, useState } from 'react';
 import './MainPage.css';
 import { getUserLvl } from './userService';
 
-function MainPage({ telegramUser }) {
+function MainPage({ userId }) {
   const [lvl, setLvl] = useState(null);
-  // const telegramId = String(telegramUser.id); // здесь подставь нужный telegram_id
+
   useEffect(() => {
-    if (telegramUser) {
-      console.log("Telegram ID:", telegramUser.id);
+    if (!userId) {
+      console.warn('No userId provided to MainPage');
+      return;
     }
-  }, [telegramUser]); 
-  useEffect(() => {
+
     async function fetchLvl() {
-      const userLvl = await getUserLvl(String(telegramUser.id));
+      const userLvl = await getUserLvl(String(userId));
       setLvl(userLvl);
     }
 
     fetchLvl();
-  }, [telegramUser]);
+  }, [userId]);
 
   return (
     <div className="main-page">
