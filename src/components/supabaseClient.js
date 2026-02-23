@@ -11,3 +11,5 @@ if (!supabaseUrl || !supabaseKey) {
 } else {
   supabase = createClient(supabaseUrl, supabaseKey);
 }
+
+export default supabase; 
