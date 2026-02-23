@@ -13,7 +13,7 @@ function MainPage({ telegramUser }) {
     }
 
     fetchLvl();
-  }, []);
+  }, [telegramId]);
 
   return (
     <div className="main-page">
