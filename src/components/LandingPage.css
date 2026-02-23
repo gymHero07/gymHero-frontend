@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .landing-header {
   background-color: #000000;
   min-height: 100vh;
