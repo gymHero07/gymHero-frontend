@@ -8,12 +8,24 @@ function MainPage() {
 
   useEffect(() => {
     async function fetchLvl() {
-      const userLvl = await getUserLvl(telegramId);
-      setLvl(userLvl);
+      try {
+        const userLvl = await getUserLvl(telegramId);
+        if (userLvl === null) {
+          setError('User not found or lvl is null');
+        } else {
+          setLvl(userLvl);
+        }
+      } catch (err) {
+        setError('Failed to fetch lvl');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
     }
 
     fetchLvl();
   }, []);
+
 
   return (
     <div className="main-page">
