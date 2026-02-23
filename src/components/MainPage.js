@@ -8,7 +8,7 @@ function MainPage({ telegramUser }) {
 
   useEffect(() => {
     async function fetchLvl() {
-      const userLvl = await getUserLvl(telegramUser.id);
+      const userLvl = await getUserLvl(String(telegramUser.id));
       setLvl(userLvl);
     }
 
