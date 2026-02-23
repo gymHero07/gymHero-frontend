@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './MainPage.css';
-import { getUserLvl } from './userService.js';
+import { getUserLvl } from './userService';
 
 function MainPage() {
   const [lvl, setLvl] = useState(null);
