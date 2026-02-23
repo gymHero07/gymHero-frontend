@@ -1,5 +1,5 @@
 // services/userService.js
-import supabase from './supabaseClient.js';
+import supabase from '..components/supabaseClient';
 
 export async function getUserLvl(telegram_id) {
   const { data, error } = await supabase
